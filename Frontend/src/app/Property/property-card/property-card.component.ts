@@ -13,10 +13,5 @@ export class ProperyCardComponent implements OnInit {
   ngOnInit() {
   }
 
-    Property : any ={
-      "Id":1,
-      "Name":"Birla House",
-      "Type": "House",
-      "Price":1200
-    }
+    
 }
