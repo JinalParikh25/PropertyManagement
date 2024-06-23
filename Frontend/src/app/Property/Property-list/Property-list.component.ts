@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProperyCardComponent } from "../property-card/property-card.component";
 import { HousingService } from '../../Services/housing.service';
+import { IProperty } from '../IProperty.interface';
 
 
   @Component({
@@ -13,17 +14,16 @@ import { HousingService } from '../../Services/housing.service';
   export class PropertyListComponent implements OnInit {
 
 
-  properties : any;
+  properties : Array<IProperty> = [];
 
     constructor(private housingService: HousingService) { }
 
     ngOnInit() {
       this.housingService.gtAllProperties().
         subscribe(
-        data =>{
-          console.log(data)
+        (data) =>{
           this.properties = data;
-        }, error => {
+        }, (error) => {
           console.log(error)
         }
         
