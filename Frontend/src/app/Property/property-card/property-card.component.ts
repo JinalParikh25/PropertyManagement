@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { IProperty } from '../IProperty.interface';
 
 
 @Component({
@@ -10,7 +11,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 })
 export class ProperyCardComponent implements OnInit {
 
-  @Input() property : any
+  @Input() property : IProperty | undefined;
 faContactBook: any;
   
   constructor() { }
