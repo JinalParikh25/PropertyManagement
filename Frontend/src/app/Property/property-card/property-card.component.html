@@ -1,10 +1,16 @@
 
   <div class="card">
     <div class="img-wrapper">
-    <img class="card-img-top" src="House_default.jpg">
+      @if (property?.Image) {
+        <img class="card-img-top" src="{{property?.Image}}.jpg">
+      }
+      @else{
+        <img class="card-img-top" src="House_default.jpg">
+      }
+    
     <ul class="list-inline text-center member-icons animate">
       <li class="list-inline-item"> 
-        <button class="btn btn-primary">Edit</button>
+        <button class="btn btn-primary" routerLink="/property-details/{{property?.Id}}" >Edit</button>
       </li>
       <li class="list-inline-item">  
         <button class="btn btn-primary">Contact</button>

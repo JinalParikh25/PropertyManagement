@@ -1,0 +1,9 @@
+<p>property-detail id is {{id}}</p>
+<button (click)="backButtonClicked()" class="btn btn-primary" >back</button> |
+<button (click)="nextButtonClicked()" class="btn btn-primary" >Next</button>
+
+<br/>
+<br/>
+<button [routerLink]="['/','property-details','1']">1</button>
+<button [routerLink]="['/','property-details','2']">2</button>
+<button [routerLink]="['/','property-details','3']">3</button>
