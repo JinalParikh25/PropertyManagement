@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProperyCardComponent } from "../property-card/property-card.component";
 import { HousingService } from '../../Services/housing.service';
 import { IProperty } from '../IProperty.interface';
+import { ActivatedRoute } from '@angular/router';
 
 
   @Component({
@@ -15,11 +16,15 @@ import { IProperty } from '../IProperty.interface';
 
 
   properties : Array<IProperty> = [];
-
-    constructor(private housingService: HousingService) { }
+    sellRent = 1;
+    constructor(private housingService: HousingService, private route: ActivatedRoute ) { }
 
     ngOnInit() {
-      this.housingService.gtAllProperties().
+      if(this.route.snapshot.url.toString()){
+        this.sellRent = 2;
+      }
+
+      this.housingService.gtAllProperties(this.sellRent).
         subscribe(
         (data) =>{
           this.properties = data;
